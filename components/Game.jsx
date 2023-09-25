@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { calculateWinner } from "..\\src\\helpers.jsx";
+// import { calculateWinner } from "../src/helpers.jsx";
+
+
 import Board from './Board';
 
 const styles = {
@@ -59,6 +61,26 @@ const Game = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
+
+  function calculateWinner(squares) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return squares[a];
+      }
+    }
+    return null;
+  }
 
   const handleClick = (i) => {
     const timeInHistory = history.slice(0, stepNumber + 1);
