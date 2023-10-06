@@ -1,3 +1,10 @@
 *{
   background-color: antiquewhite;
 }
+*{
+  background-color: antiquewhite;
+}
+.main{
+  display:flex,
+  flex-direction:row
+}
