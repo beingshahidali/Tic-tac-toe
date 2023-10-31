@@ -18,6 +18,8 @@ const styles = {
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
     padding: '20px',
     backgroundColor: '#f5f5f5',
+
+    
   },
   status: {
     fontSize: '24px',
